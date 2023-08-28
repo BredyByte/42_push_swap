@@ -14,7 +14,7 @@
 
 void	ft_print_error(void)
 {
-	ft_printf("Arguments Error!\n");
+	ft_printf("Arguments Error!!\n");
 }
 
 int	ft_check_num(char *arg)
