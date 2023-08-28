@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:12:49 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/08/26 16:01:20 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/08/28 14:30:06 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ char		*ft_free(char *buffer, char *buf);
 char		*get_next_line(int fd);
 double		ft_atof(char *str);
 int			ft_isspace(int c);
+int			ft_dstrlen(char **str);
 
 // Nodes controls
 
