@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:12:49 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/08/29 14:37:25 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/08/29 16:18:38 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_list
 {
 	int				num;
 	int				fin_ind;
+	int				ind_start;
 	struct s_list	*next;
 }					t_list;
 
@@ -83,12 +84,10 @@ int			ft_dstrlen(char **str);
 
 void		ft_lstadd_back(t_list **lst, t_list *new);
 void		ft_lstadd_front(t_list **lst, t_list *new);
-void		ft_lstclear(t_list **lst, void (*del)(void*));
-void		ft_lstdelone(t_list *lst, void (*del)(void *));
-void		ft_lstiter(t_list *lst, void (*f)(void *));
+void		ft_lstclear(t_list **lst, void (*del)(int));
+void		ft_lstdelone(t_list *lst, void (*del)(int));
 t_list		*ft_lstlast(t_list *lst);
-t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-t_list		*ft_lstnew(void *content);
+t_list		*ft_lstnew(int num, int ind_fin, int ind_start);
 int			ft_lstsize(t_list *lst);
 
 #endif

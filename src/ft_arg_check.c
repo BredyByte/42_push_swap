@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 18:03:44 by marvin            #+#    #+#             */
-/*   Updated: 2023/08/29 14:37:06 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/08/29 17:05:23 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,10 @@ void	ft_arg_check(int argc, char **argv, int *values)
 {
 	int	i;
 
+	if (argc < 2)
+	{
+		ft_error(values);
+	}
 	i = 0;
 	while (i < argc)
 	{
@@ -59,4 +63,5 @@ void	ft_arg_check(int argc, char **argv, int *values)
 		values[i] = ft_atoi(argv[i]);
 		i++;
 	}
+	values[i] = '\0';
 }
