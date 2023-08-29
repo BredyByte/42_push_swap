@@ -6,13 +6,25 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:51:02 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/06/19 15:59:52 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/08/29 14:37:47 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+int	ft_isdigit(char *str)
 {
-	return ((c >= '0' && c <= '9'));
+	int	i;
+	int	c;
+
+	i = 0;
+	while (str[i])
+	{
+		c = str[i];
+		if (c >= '0' && c <= '9')
+			i++;
+		else
+			return (0);
+	}
+	return (1);
 }

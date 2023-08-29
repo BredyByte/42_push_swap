@@ -5,6 +5,7 @@
 		"ios": "cpp",
 		"__tuple": "c",
 		"array": "c",
-		"fractol.h": "c"
+		"fractol.h": "c",
+		"libft.h": "c"
 	}
 }

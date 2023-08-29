@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:12:49 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/08/28 14:30:06 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/08/29 14:37:25 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@
 
 typedef struct s_list
 {
-	void			*content;
+	int				num;
+	int				fin_ind;
 	struct s_list	*next;
 }					t_list;
 
@@ -34,7 +35,7 @@ void		ft_bzero(void *s, size_t n);
 int			ft_isalnum(int c);
 int			ft_isalpha(int c);
 int			ft_isascii(int c);
-int			ft_isdigit(int c);
+int			ft_isdigit(char *str);
 int			ft_isprint(int c);
 void		*ft_memcpy(void *dest, const void *src, size_t len);
 void		*ft_memmove(void *dest, const void *src, size_t len);

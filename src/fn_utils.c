@@ -6,13 +6,15 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 12:20:34 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/08/28 12:20:54 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/08/29 10:56:21 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_print_error(void)
+void	ft_error(int *values)
 {
 	ft_printf("Arguments Error!!\n");
+	free(values);
+	exit(1);
 }
