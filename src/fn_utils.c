@@ -5,16 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/28 12:20:34 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/08/29 10:56:21 by dbredykh         ###   ########.fr       */
+/*   Created: 2023/08/30 14:06:51 by dbredykh          #+#    #+#             */
+/*   Updated: 2023/08/30 14:10:21 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_error(int *values)
+void	ft_free_all(t_list **stack_a, t_list **stack_b)
 {
-	ft_printf("Arguments Error!!\n");
-	free(values);
-	exit(1);
+	ft_lstclear(stack_a);
+	free(stack_a);
+	ft_lstclear(stack_b);
+	free(stack_b);
 }

@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 18:03:44 by marvin            #+#    #+#             */
-/*   Updated: 2023/08/29 17:05:23 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/08/30 14:04:05 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,17 +49,17 @@ void	ft_arg_check(int argc, char **argv, int *values)
 
 	if (argc < 2)
 	{
-		ft_error(values);
+		ft_arg_error(values);
 	}
 	i = 0;
 	while (i < argc)
 	{
 		if (!ft_check_num(argv[i]))
-			ft_error(values);
+			ft_arg_error(values);
 		if (!ft_check_range(ft_atoi(argv[i])))
-			ft_error(values);
+			ft_arg_error(values);
 		if (!ft_check_duplicate(values, ft_atoi(argv[i]), i))
-			ft_error(values);
+			ft_arg_error(values);
 		values[i] = ft_atoi(argv[i]);
 		i++;
 	}

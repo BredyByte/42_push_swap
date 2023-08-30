@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   fn_errors.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/26 15:55:57 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/08/30 13:31:50 by dbredykh         ###   ########.fr       */
+/*   Created: 2023/08/28 12:20:34 by dbredykh          #+#    #+#             */
+/*   Updated: 2023/08/30 14:05:16 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+size_t	ft_memory_error(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*last;
+	size_t	error;
 
-	last = *lst;
-	if (last == NULL)
-		ft_lstadd_front(lst, new);
-	else
+	error = 0;
+	if (!stack_a)
+		error = 1;
+	if (!stack_b)
 	{
-		last = ft_lstlast(*lst);
-		last->next = new;
+		ft_lstclear(stack_a);
+		error = 1;
 	}
+	if (error == 1)
+		write(2, "Error\n", 6);
+	return (error);
+}
+
+void	ft_arg_error(int *values)
+{
+	ft_printf("Arguments Error!!\n");
+	free(values);
+	exit(1);
 }
