@@ -6,24 +6,26 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 18:10:08 by marvin            #+#    #+#             */
-/*   Updated: 2023/08/30 14:10:50 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/08/30 14:27:52 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	init_resources(t_list ***stack_a,
+						t_list ***stack_b, int argc, int **values)
 {
-	int		*values;
-	int		len;
-	t_list	**stack_a;
-	t_list	**stack_b;
+	*stack_a = NULL;
+	*stack_b = calloc(1, sizeof(t_list *));
+	*values = malloc(sizeof(int) * argc);
+	if (!*values)
+		exit(1);
+}
 
-	stack_a = NULL;
-	stack_b = calloc(1, sizeof(t_list *));
-	values = malloc(sizeof(int) * argc);
-	if (!values)
-		return (1);
+void	process_args(int argc, char **argv, int *values)
+{
+	int	len;
+
 	if (argc == 2)
 	{
 		argv = ft_split(argv[1], ' ');
@@ -32,6 +34,16 @@ int	main(int argc, char **argv)
 	}
 	else
 		ft_arg_check(argc - 1, argv + 1, values);
+}
+
+int	main(int argc, char **argv)
+{
+	int		*values;
+	t_list	**stack_a;
+	t_list	**stack_b;
+
+	init_resources(&stack_a, &stack_b, argc, &values);
+	process_args(argc, argv, values);
 	stack_a = ft_create_stack(values, stack_a);
 	if (ft_memory_error(stack_a, stack_b))
 		return (1);
