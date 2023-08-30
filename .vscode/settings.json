@@ -8,6 +8,8 @@
 		"fractol.h": "c",
 		"libft.h": "c",
 		"iterator": "c",
-		"chrono": "c"
+		"chrono": "c",
+		"push_swap.h": "c",
+		"complex": "c"
 	}
 }

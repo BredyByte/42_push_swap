@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 12:20:34 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/08/30 14:05:16 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/08/30 15:20:11 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	ft_memory_error(t_list **stack_a, t_list **stack_b)
 		error = 1;
 	}
 	if (error == 1)
-		write(2, "Error\n", 6);
+		write(2, "Memmory Error\n", 6);
 	return (error);
 }
 

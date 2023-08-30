@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 14:07:34 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/08/30 14:09:50 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/08/30 14:53:24 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,6 @@ t_list	**ft_create_stack(int *values, t_list **stack_a)
 			return (NULL);
 		i++;
 	}
+	free(values);
 	return (stack_a);
 }
