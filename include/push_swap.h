@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 10:59:52 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/08/30 17:35:10 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/08/31 12:29:36 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,6 @@ t_list	**ft_create_stack(int *values, t_list **stack_a);
 void	ft_swap(t_list **stack_a, t_list **stack_b, int oper);
 void	ft_push(t_list **stack_a, t_list **stack_b, int oper);
 void	ft_rotate(t_list **stack_a, t_list **stack_b, int oper);
+void	ft_reverse_rotate(t_list **stack_a, t_list **stack_b, int oper);
+
 #endif

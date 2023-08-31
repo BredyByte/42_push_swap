@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 18:10:08 by marvin            #+#    #+#             */
-/*   Updated: 2023/08/30 18:03:58 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/08/31 13:15:39 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,14 @@ int	main(int argc, char **argv)
 		return (1);
 	ft_push(stack_a, stack_b, 'b');
 	ft_push(stack_a, stack_b, 'b');
-	ft_rotate(stack_a, stack_b, 'b');
+	ft_push(stack_a, stack_b, 'b');
+	ft_push(stack_a, stack_b, 'b');
+	ft_push(stack_a, stack_b, 'b');
+	ft_reverse_rotate(stack_a, stack_b, 'b');
+	ft_reverse_rotate(stack_a, stack_b, 'b');
+	ft_reverse_rotate(stack_a, stack_b, 'b');
+	ft_reverse_rotate(stack_a, stack_b, 'b');
+	ft_reverse_rotate(stack_a, stack_b, 'b');
 	t_list	*tmp;
 	tmp = *stack_b;
 	while (tmp)

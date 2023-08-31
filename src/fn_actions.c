@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 14:54:32 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/08/30 18:02:18 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/08/31 13:13:40 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ void	ft_rotate(t_list **stack_a, t_list **stack_b, int oper)
 	t_list	*tmp;
 	t_list	*last;
 
-	(void)stack_b;
 	if ((oper == 'a' || oper == 'r') && ft_lstsize(*stack_a) > 1)
 	{
 		tmp = *stack_a;
@@ -77,7 +76,7 @@ void	ft_rotate(t_list **stack_a, t_list **stack_b, int oper)
 		last->next = tmp;
 		tmp->next = NULL;
 	}
-	else if ((oper == 'b' || oper == 'r') && ft_lstsize(*stack_a) > 1)
+	else if ((oper == 'b' || oper == 'r') && ft_lstsize(*stack_b) > 1)
 	{
 		tmp = *stack_b;
 		last = *stack_b;
@@ -88,4 +87,32 @@ void	ft_rotate(t_list **stack_a, t_list **stack_b, int oper)
 		tmp->next = NULL;
 	}
 	ft_printf ("r%c\n", oper);
+}
+
+void	ft_reverse_rotate(t_list **stack_a, t_list **stack_b, int oper)
+{
+	t_list	*tmp;
+	t_list	*last;
+
+	if ((oper == 'a' || oper == 'r') && ft_lstsize(*stack_a) > 1)
+	{
+		tmp = *stack_a;
+		last = *stack_a;
+		while (last->next && last->next->next)
+			last = last->next;
+		*stack_a = last->next;
+		last->next->next = tmp;
+		last->next = NULL;
+	}
+	else if ((oper == 'b' || oper == 'r') && ft_lstsize(*stack_b) > 1)
+	{
+		tmp = *stack_b;
+		last = *stack_b;
+		while (last->next && last->next->next)
+			last = last->next;
+		*stack_b = last->next;
+		last->next->next = tmp;
+		last->next = NULL;
+	}
+	ft_printf ("rr%c\n", oper);
 }
