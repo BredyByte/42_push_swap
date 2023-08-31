@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 18:10:08 by marvin            #+#    #+#             */
-/*   Updated: 2023/08/31 13:15:39 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/08/31 16:56:58 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,23 +47,14 @@ int	main(int argc, char **argv)
 	stack_a = ft_create_stack(values, stack_a);
 	if (ft_memory_error(stack_a, stack_b))
 		return (1);
-	ft_push(stack_a, stack_b, 'b');
-	ft_push(stack_a, stack_b, 'b');
-	ft_push(stack_a, stack_b, 'b');
-	ft_push(stack_a, stack_b, 'b');
-	ft_push(stack_a, stack_b, 'b');
-	ft_reverse_rotate(stack_a, stack_b, 'b');
-	ft_reverse_rotate(stack_a, stack_b, 'b');
-	ft_reverse_rotate(stack_a, stack_b, 'b');
-	ft_reverse_rotate(stack_a, stack_b, 'b');
-	ft_reverse_rotate(stack_a, stack_b, 'b');
+	push_swap(stack_a, stack_b, ft_strlen(values, 'n'));
 	t_list	*tmp;
-	tmp = *stack_b;
+	tmp = *stack_a;
 	while (tmp)
 	{
 		printf("%d\n", tmp->num);
 		tmp = tmp->next;
 	}
-	ft_free_all(stack_a, stack_b);
+	ft_free_all(stack_a, stack_b, values);
 	return (0);
 }
