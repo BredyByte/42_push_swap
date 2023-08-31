@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 12:29:35 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/06/19 15:58:47 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/08/31 18:43:56 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s1)
 	size_t	len;
 	size_t	i;
 
-	len = sizeof(char) * ft_strlen(s1) + 1;
+	len = sizeof(char) * ft_strlen(s1, 'c') + 1;
 	dest = malloc(len);
 	if (!dest)
 		return (NULL);

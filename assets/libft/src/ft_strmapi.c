@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:31:02 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/06/19 15:59:28 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/08/31 18:45:26 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char		*dest;
 	size_t		i;
 
-	dest = malloc(sizeof(char) * ft_strlen(s) + 1);
+	dest = malloc(sizeof(char) * ft_strlen(s, 'c') + 1);
 	if (!dest)
 		return (NULL);
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 15:28:22 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/07/31 17:12:14 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/08/31 18:44:31 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ size_t	ft_strlcat(char *dest, const char *src, size_t len)
 	}
 	if (i < len)
 		dest[i + j] = '\0';
-	return (i + ft_strlen(src));
+	return (i + ft_strlen(src, 'c'));
 }

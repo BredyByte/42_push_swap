@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 21:39:34 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/08/20 19:25:00 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/08/31 18:46:19 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static char	*ft_next(char *buffer)
 		free(buffer);
 		return (NULL);
 	}
-	line = ft_calloc((ft_strlen(buffer) - i + 1), sizeof(char));
+	line = ft_calloc((ft_strlen(buffer, 'c') - i + 1), sizeof(char));
 	i++;
 	j = 0;
 	while (buffer[i])

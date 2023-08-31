@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 18:10:08 by marvin            #+#    #+#             */
-/*   Updated: 2023/08/31 16:56:58 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/08/31 18:43:08 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	main(int argc, char **argv)
 	tmp = *stack_a;
 	while (tmp)
 	{
-		printf("%d\n", tmp->num);
+		printf("%d\n", tmp->n);
 		tmp = tmp->next;
 	}
 	ft_free_all(stack_a, stack_b, values);

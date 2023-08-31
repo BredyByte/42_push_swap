@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 17:34:14 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/08/20 19:07:38 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/08/31 18:44:18 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (!s1 || !s2)
 		return (NULL);
-	len = ft_strlen(s1) + ft_strlen(s2);
+	len = ft_strlen(s1, 'c') + ft_strlen(s2, 'c');
 	ret = malloc(sizeof(char) * (len + 1));
 	if (!ret)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 15:09:25 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/06/19 15:59:24 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/08/31 18:45:43 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (s1 == 0 || set == 0)
 		return (NULL);
 	start = 0;
-	end = ft_strlen(s1);
+	end = ft_strlen(s1, 'c');
 	while (s1[start] && ft_set_contain(s1[start], set))
 		start++;
 	while (end > start && ft_set_contain(s1[end - 1], set))
