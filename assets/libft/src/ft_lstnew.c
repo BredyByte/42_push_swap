@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 16:00:55 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/08/31 17:58:45 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/09/01 15:57:35 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ t_list	*ft_lstnew(int num, int fin_ind, int start_ind)
 		return (NULL);
 	new_list->n = num;
 	new_list->fin_ind = fin_ind;
-	new_list->start_ind = start_ind;
+	new_list->pos = start_ind;
+	new_list->target_pos = 0;
+	new_list->cost_a = 0;
+	new_list->cost_b = 0;
 	new_list->next = NULL;
 	return (new_list);
 }

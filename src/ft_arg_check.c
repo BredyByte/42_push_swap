@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 18:03:44 by marvin            #+#    #+#             */
-/*   Updated: 2023/08/30 14:23:58 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/09/04 12:28:02 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 static int	ft_check_num(char *arg)
 {
-	int	num;
-
 	if (!(ft_isdigit(arg)))
 		return (0);
-	num = ft_atoi(arg);
+	ft_atoi(arg);
 	return (1);
 }
 

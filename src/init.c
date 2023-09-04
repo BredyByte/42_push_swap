@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 18:10:08 by marvin            #+#    #+#             */
-/*   Updated: 2023/08/31 18:43:08 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/09/04 18:09:26 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,14 @@ int	main(int argc, char **argv)
 		return (1);
 	push_swap(stack_a, stack_b, ft_strlen(values, 'n'));
 	t_list	*tmp;
-	tmp = *stack_a;
+	tmp = *stack_b;
 	while (tmp)
 	{
-		printf("%d\n", tmp->n);
+		printf("value: %d, ", tmp->n);
+		printf("pos: %d, ", tmp->pos);
+		printf("target_pos: %d, ", tmp->target_pos);
+		printf("cost_b: %d\n", tmp->cost_b);
+		printf("cost_a: %d\n", tmp->cost_a);
 		tmp = tmp->next;
 	}
 	ft_free_all(stack_a, stack_b, values);

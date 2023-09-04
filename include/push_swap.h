@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 10:59:52 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/08/31 17:51:01 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/09/04 18:08:32 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,11 @@ void	ft_rev_rotate(t_list **stack_a, t_list **stack_b, int oper);
 
 // push_swap.c
 void	push_swap(t_list **stack_a, t_list **stack_b, int len);
+
+//push_swap_utils.c
+void	ft_calc_pos(t_list **stack);
+void	ft_calc_target_pos(t_list **stack_a, t_list **stack_b);
+void 	ft_calculate_cost_b(t_list **stack_b);
+int		ft_calculate_cost_a(t_list **stack_a, int target_position);
 
 #endif
