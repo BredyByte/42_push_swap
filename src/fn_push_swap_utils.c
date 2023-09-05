@@ -6,11 +6,24 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 18:11:33 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/09/04 18:08:46 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/09/05 14:00:57 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	ft_calculate_cost_to_top(t_list **stack, int element_position)
+{
+	int	size;
+	int	cost;
+
+	size = ft_lstsize(*stack);
+	if (element_position < size / 2)
+		cost = element_position;
+	else
+		cost = -(size - element_position);
+	return (cost);
+}
 
 void	ft_calc_pos(t_list **stack)
 {
@@ -54,33 +67,22 @@ void	ft_calc_target_pos(t_list **stack_a, t_list **stack_b)
 	}
 }
 
-int ft_calculate_cost_to_top(t_list **stack, int element_position)
+void	ft_calculate_cost_b(t_list **stack_b)
 {
-    int size = ft_lstsize(*stack);
-    int cost;
+	t_list	*tmp;
+	int		pos;
 
-    if (element_position < size / 2)
-        cost = element_position;
-    else
-        cost = -(size - element_position);
-
-    return cost;
+	tmp = *stack_b;
+	pos = 0;
+	while (tmp)
+	{
+		tmp->cost_b = ft_calculate_cost_to_top(stack_b, pos);
+		tmp = tmp->next;
+		pos++;
+	}
 }
 
-void ft_calculate_cost_b(t_list **stack_b)
+int	ft_calculate_cost_a(t_list **stack_a, int target_position)
 {
-    t_list *tmp = *stack_b;
-    int pos = 0;
-
-    while (tmp)
-    {
-        tmp->cost_b = ft_calculate_cost_to_top(stack_b, pos);
-        tmp = tmp->next;
-        pos++;
-    }
-}
-
-int ft_calculate_cost_a(t_list **stack_a, int target_position)
-{
-    return (ft_calculate_cost_to_top(stack_a, target_position));
+	return (ft_calculate_cost_to_top(stack_a, target_position));
 }
