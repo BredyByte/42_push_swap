@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 13:31:34 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/09/05 13:51:20 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/09/06 14:32:50 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,3 @@ void	ft_alg_three(t_list **stack_a)
 	else if (tmp->n > tmp->next->next->n && tmp->next->n > tmp->n)
 		ft_rev_rotate(stack_a, NULL, 'a');
 }
-

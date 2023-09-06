@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 13:30:02 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/09/05 14:09:23 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/09/06 16:12:27 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ t_list	*ft_find_cheapest_element(t_list **stack_b)
 	return (cheapest_element);
 }
 
-static void	ft_exec_act_aux(t_list **stack_a, t_list **stack_b, int *cost_a,
+/* static void	ft_exec_act_aux(t_list **stack_a, t_list **stack_b, int *cost_a,
 		int *cost_b)
 {
 	while (*cost_a > 0 && *cost_b > 0)
@@ -74,9 +74,9 @@ static void	ft_exec_act_aux(t_list **stack_a, t_list **stack_b, int *cost_a,
 void	ft_execute_optimized_actions(t_list **stack_a, t_list **stack_b,
 		int *cost_a, int *cost_b)
 {
-	ft_exec_act_aux(stack_a, stack_b, cost_a, cost_b);
 	while (*cost_a < 0)
 	{
+		printf ("HELLO\n");
 		ft_rev_rotate(stack_a, NULL, 'a');
 		(*cost_a)++;
 	}
@@ -89,6 +89,34 @@ void	ft_execute_optimized_actions(t_list **stack_a, t_list **stack_b,
 	{
 		ft_rev_rotate(NULL, stack_b, 'b');
 		(*cost_b)++;
+	}
+	ft_exec_act_aux(stack_a, stack_b, cost_a, cost_b);
+} */
+
+void	ft_execute_optimized_actions(t_list **stack_a, t_list **stack_b, int *cost_a, int *cost_b)
+{
+	while (*cost_a != 0 || *cost_b != 0) {
+		if (*cost_a > 0 && *cost_b > 0) {
+			ft_rotate(stack_a, stack_b, 'r');
+			(*cost_a)--;
+			(*cost_b)--;
+		} else if (*cost_a < 0 && *cost_b < 0) {
+			ft_rev_rotate(stack_a, stack_b, 'r');
+			(*cost_a)++;
+			(*cost_b)++;
+		} else if (*cost_a > 0) {
+			ft_rotate(stack_a, NULL, 'a');
+			(*cost_a)--;
+		} else if (*cost_a < 0) {
+			ft_rev_rotate(stack_a, NULL, 'a');
+			(*cost_a)++;
+		} else if (*cost_b > 0) {
+			ft_rotate(NULL, stack_b, 'b');
+			(*cost_b)--;
+		} else if (*cost_b < 0) {
+			ft_rev_rotate(NULL, stack_b, 'b');
+			(*cost_b)++;
+		}
 	}
 }
 
