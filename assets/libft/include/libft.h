@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:12:49 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/09/05 14:35:46 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/09/06 12:11:24 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int			ft_strncmp(const char *s1, const char *s2, size_t n);
 void		*ft_memchr(const void *s, int c, size_t n);
 int			ft_memcmp(const void *s1, const void *s2, size_t n);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
-int			ft_atoi(const char *str);
+int			ft_atoi(char *str);
 void		*ft_calloc(size_t count, size_t size);
 char		*ft_strdup(const char *s1);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
@@ -83,6 +83,7 @@ double		ft_atof(char *str);
 int			ft_isspace(int c);
 int			ft_dstrlen(char **str);
 long		ft_abs(int n);
+int			ft_strcmp(char *s1, char *s2);
 
 // Nodes controls
 

@@ -6,80 +6,65 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 16:55:53 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/09/05 14:35:29 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/09/06 12:32:15 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	**ft_freeresult(char **result)
+static int	count_words(const char *s, char c)
 {
+	int	word_count;
 	int	i;
 
+	word_count = 0;
 	i = 0;
-	while (result[i])
+	while (s[i])
 	{
-		free(result[i]);
-		i++;
+		while (s[i] == c)
+			i++;
+		if (s[i] != '\0')
+			word_count++;
+		while (s[i] && s[i] != c)
+			i++;
 	}
-	free(result);
-	return (NULL);
+	return (word_count);
 }
 
-static int	ft_count_words(const char *str, char c)
+static void	split_words(const char *s, char c, char **arr)
 {
-	int	count;
+	int	i;
+	int	j;
+	int	k;
 
-	count = 0;
-	while (*str)
+	i = 0;
+	k = 0;
+	while (s[i])
 	{
-		if (*str != c)
+		while (s[i] == c)
+			i++;
+		if (s[i])
 		{
-			count++;
-			while (*str && *str != c)
-				str++;
+			j = 0;
+			while (s[i + j] && s[i + j] != c)
+				j++;
+			arr[k] = strndup(&s[i], j);
+			k++;
+			i += j;
 		}
-		else
-			str++;
 	}
-	return (count);
 }
 
-static char	*ft_copy_word(const char *str, char c)
+char	**ft_split(const char *s, char c)
 {
-	size_t	len;
-	char	*word;
+	char	**arr;
+	int		word_count;
 
-	len = 0;
-	while (str[len] && str[len] != c)
-		len++;
-	word = ft_substr(str, 0, len);
-	return (word);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	char	**result;
-	int		num_words;
-	int		i;
-
-	num_words = ft_count_words(s, c);
-	result = ft_calloc(num_words + 1, sizeof(char *));
-	if (!result)
+	word_count = count_words(s, c);
+	arr = (char **)malloc(sizeof(char *) * (word_count + 1));
+	if (!arr)
 		return (NULL);
-	i = 0;
-	while (*s)
-	{
-		if (*s != c)
-		{
-			result[i++] = ft_copy_word(s, c);
-			if (!result[i - 1])
-				return (ft_freeresult(result));
-			while (*s && *s != c)
-				s++;
-		}
-		else
-			s++;
-	}
-	return (result);
+	split_words(s, c, arr);
+	arr[word_count] = NULL;
+	return (arr);
 }

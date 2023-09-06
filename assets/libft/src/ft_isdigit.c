@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:51:02 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/08/29 14:37:47 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/09/06 12:09:48 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,11 @@
 
 int	ft_isdigit(char *str)
 {
-	int	i;
-	int	c;
-
-	i = 0;
-	while (str[i])
+	while (*str)
 	{
-		c = str[i];
-		if (c >= '0' && c <= '9')
-			i++;
-		else
+		if (*str < '0' || *str > '9')
 			return (0);
+		str++;
 	}
 	return (1);
 }

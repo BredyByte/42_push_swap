@@ -6,13 +6,13 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 14:07:34 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/08/31 16:17:40 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/09/06 12:39:57 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	find_ind_fin(int value, int *values)
+static int	find_ind_fin(int value, char **values)
 {
 	int	j;
 	int	ind_fin;
@@ -21,21 +21,22 @@ static int	find_ind_fin(int value, int *values)
 	ind_fin = 0;
 	while (values[j])
 	{
-		if (value > values[j])
+		if (value > ft_atoi(values[j]))
 			ind_fin++;
 		j++;
 	}
-
 	return (ind_fin);
 }
 
-static int	add_to_stack(int i, int *values, t_list **stack_a)
+static int	add_to_stack(int i, char **values, t_list **stack_a)
 {
 	int		ind_fin;
 	t_list	*temp;
+	int		current_value;
 
-	ind_fin = find_ind_fin(values[i], values);
-	temp = ft_lstnew(values[i], ind_fin, i);
+	current_value = ft_atoi(values[i]);
+	ind_fin = find_ind_fin(current_value, values);
+	temp = ft_lstnew(current_value, ind_fin, i);
 	if (!temp)
 		return (0);
 	if (!*stack_a)
@@ -45,7 +46,7 @@ static int	add_to_stack(int i, int *values, t_list **stack_a)
 	return (1);
 }
 
-t_list	**ft_create_stack(int *values, t_list **stack_a)
+t_list	**ft_create_stack(char **values, t_list **stack_a)
 {
 	int	i;
 
