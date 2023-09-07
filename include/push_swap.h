@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 10:59:52 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/09/06 14:33:00 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/09/07 15:13:37 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,9 @@ void	ft_rev_rotate(t_list **stack_a, t_list **stack_b, int oper);
 void	push_swap(t_list **stack_a, t_list **stack_b, int len);
 
 // push_swap_utils.c
-int		ft_calculate_cost_to_top(t_list **stack, int element_position);
-void	ft_calc_pos(t_list **stack);
-void	ft_calc_target_pos(t_list **stack_a, t_list **stack_b);
-void	ft_calculate_cost_b(t_list **stack_b);
-int		ft_calculate_cost_a(t_list **stack_a, int target_position);
 
 // fn_more_three_alg_utils.c
 t_list	*ft_find_cheapest_element(t_list **stack_b);
-void	ft_determine_costs_for_stack_b(t_list **stack_a, t_list **stack_b);
 void	ft_move_cheapest_element_to_a(t_list **stack_a, t_list **stack_b);
 
 // fn_algorithms.c

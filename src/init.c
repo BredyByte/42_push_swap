@@ -6,14 +6,13 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 18:10:08 by marvin            #+#    #+#             */
-/*   Updated: 2023/09/06 13:06:23 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/09/07 15:14:42 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init_resources(t_list ***stack_a,
-						t_list ***stack_b)
+void	init_resources(t_list ***stack_a, t_list ***stack_b)
 {
 	*stack_a = NULL;
 	*stack_b = calloc(1, sizeof(t_list *));

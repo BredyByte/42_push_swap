@@ -10,6 +10,7 @@
 		"iterator": "c",
 		"chrono": "c",
 		"push_swap.h": "c",
-		"complex": "c"
+		"complex": "c",
+		"__node_handle": "c"
 	}
 }

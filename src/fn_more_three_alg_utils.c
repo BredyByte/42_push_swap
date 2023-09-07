@@ -6,25 +6,11 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 13:30:02 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/09/06 16:12:27 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/09/07 15:33:30 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ft_determine_costs_for_stack_b(t_list **stack_a, t_list **stack_b)
-{
-	t_list	*tmp;
-	int		target_pos;
-
-	tmp = *stack_b;
-	while (tmp)
-	{
-		target_pos = tmp->target_pos;
-		tmp->cost_a = ft_calculate_cost_a(stack_a, target_pos);
-		tmp = tmp->next;
-	}
-}
 
 t_list	*ft_find_cheapest_element(t_list **stack_b)
 {
@@ -49,83 +35,10 @@ t_list	*ft_find_cheapest_element(t_list **stack_b)
 	return (cheapest_element);
 }
 
-/* static void	ft_exec_act_aux(t_list **stack_a, t_list **stack_b, int *cost_a,
-		int *cost_b)
-{
-	while (*cost_a > 0 && *cost_b > 0)
-	{
-		ft_rotate(stack_a, stack_b, 'r');
-		(*cost_a)--;
-		(*cost_b)--;
-	}
-	while (*cost_a < 0 && *cost_b < 0)
-	{
-		ft_rev_rotate(stack_a, stack_b, 'r');
-		(*cost_a)++;
-		(*cost_b)++;
-	}
-	while (*cost_a > 0)
-	{
-		ft_rotate(stack_a, NULL, 'a');
-		(*cost_a)--;
-	}
-}
-
-void	ft_execute_optimized_actions(t_list **stack_a, t_list **stack_b,
-		int *cost_a, int *cost_b)
-{
-	while (*cost_a < 0)
-	{
-		printf ("HELLO\n");
-		ft_rev_rotate(stack_a, NULL, 'a');
-		(*cost_a)++;
-	}
-	while (*cost_b > 0)
-	{
-		ft_rotate(NULL, stack_b, 'b');
-		(*cost_b)--;
-	}
-	while (*cost_b < 0)
-	{
-		ft_rev_rotate(NULL, stack_b, 'b');
-		(*cost_b)++;
-	}
-	ft_exec_act_aux(stack_a, stack_b, cost_a, cost_b);
-} */
-
-void	ft_execute_optimized_actions(t_list **stack_a, t_list **stack_b, int *cost_a, int *cost_b)
-{
-	while (*cost_a != 0 || *cost_b != 0) {
-		if (*cost_a > 0 && *cost_b > 0) {
-			ft_rotate(stack_a, stack_b, 'r');
-			(*cost_a)--;
-			(*cost_b)--;
-		} else if (*cost_a < 0 && *cost_b < 0) {
-			ft_rev_rotate(stack_a, stack_b, 'r');
-			(*cost_a)++;
-			(*cost_b)++;
-		} else if (*cost_a > 0) {
-			ft_rotate(stack_a, NULL, 'a');
-			(*cost_a)--;
-		} else if (*cost_a < 0) {
-			ft_rev_rotate(stack_a, NULL, 'a');
-			(*cost_a)++;
-		} else if (*cost_b > 0) {
-			ft_rotate(NULL, stack_b, 'b');
-			(*cost_b)--;
-		} else if (*cost_b < 0) {
-			ft_rev_rotate(NULL, stack_b, 'b');
-			(*cost_b)++;
-		}
-	}
-}
-
 void	ft_move_cheapest_element_to_a(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*cheapest;
 
 	cheapest = ft_find_cheapest_element(stack_b);
-	ft_execute_optimized_actions(stack_a, stack_b, &(cheapest->cost_a),
-		&(cheapest->cost_b));
 	ft_push(stack_a, stack_b, 'a');
 }
