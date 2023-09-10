@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 14:54:32 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/09/06 14:29:49 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/09/10 19:05:38 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,4 +114,5 @@ void	ft_rev_rotate(t_list **stack_a, t_list **stack_b, int oper)
 		*stack_b = last;
 		before_last->next = NULL;
 	}
+	ft_printf ("rr%c\n", oper);
 }

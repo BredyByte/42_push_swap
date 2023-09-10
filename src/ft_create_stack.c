@@ -6,37 +6,19 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 14:07:34 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/09/06 16:54:19 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/09/10 18:56:57 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	find_ind_fin(int value, char **values)
-{
-	int	j;
-	int	ind_fin;
-
-	j = 0;
-	ind_fin = 1;
-	while (values[j])
-	{
-		if (value > ft_atoi(values[j]))
-			ind_fin++;
-		j++;
-	}
-	return (ind_fin);
-}
-
 static int	add_to_stack(int i, char **values, t_list **stack_a)
 {
-	int		ind_fin;
 	t_list	*temp;
 	int		current_value;
 
 	current_value = ft_atoi(values[i]);
-	ind_fin = find_ind_fin(current_value, values);
-	temp = ft_lstnew(current_value, ind_fin);
+	temp = ft_lstnew(current_value);
 	if (!temp)
 		return (0);
 	if (!*stack_a)

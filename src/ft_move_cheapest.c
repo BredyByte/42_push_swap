@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fn_more_three_alg_utils.c                          :+:      :+:    :+:   */
+/*   ft_move_cheapest.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 13:30:02 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/09/07 15:33:30 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/09/10 19:52:37 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,23 @@ void	ft_move_cheapest_element_to_a(t_list **stack_a, t_list **stack_b)
 	t_list	*cheapest;
 
 	cheapest = ft_find_cheapest_element(stack_b);
+	while (*stack_b != cheapest)
+	{
+		if (cheapest->pos < (ft_lstsize(*stack_b) / 2))
+			ft_rotate(NULL, stack_b, 'b');
+		else
+			ft_rev_rotate(NULL, stack_b, 'b');
+	}
+	int i = cheapest->cost_a;
+	while (i > 0)
+	{
+		ft_rotate(stack_a, NULL, 'a');
+		i--;
+	}
+	while (i < 0)
+	{
+		ft_rev_rotate(stack_a, NULL, 'a');
+		i++;
+	}
 	ft_push(stack_a, stack_b, 'a');
 }

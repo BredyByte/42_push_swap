@@ -11,6 +11,7 @@
 		"chrono": "c",
 		"push_swap.h": "c",
 		"complex": "c",
-		"__node_handle": "c"
+		"__node_handle": "c",
+		"sstream": "c"
 	}
 }

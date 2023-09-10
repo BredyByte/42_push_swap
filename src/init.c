@@ -6,19 +6,19 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 18:10:08 by marvin            #+#    #+#             */
-/*   Updated: 2023/09/07 15:14:42 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/09/10 19:59:12 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init_resources(t_list ***stack_a, t_list ***stack_b)
+static void	init_resources(t_list ***stack_a, t_list ***stack_b)
 {
 	*stack_a = NULL;
 	*stack_b = calloc(1, sizeof(t_list *));
 }
 
-char	**process_args(int argc, char **argv)
+static char	**process_args(int argc, char **argv)
 {
 	char	**args;
 
@@ -46,6 +46,7 @@ int	main(int argc, char **argv)
 	stack_a = ft_create_stack(values, stack_a);
 	if (ft_memory_error(stack_a, stack_b))
 		return (1);
+	ft_fill_ind_fin(stack_a);
 	push_swap(stack_a, stack_b, ft_lstsize(*stack_a));
 	ft_free_all(stack_a, stack_b, values, argc);
 	return (0);

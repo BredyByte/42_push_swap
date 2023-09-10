@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:12:49 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/09/06 16:51:40 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/09/10 18:42:43 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void		ft_lstadd_front(t_list **lst, t_list *new);
 void		ft_lstclear(t_list **lst);
 void		ft_lstdelone(t_list *lst);
 t_list		*ft_lstlast(t_list *lst);
-t_list		*ft_lstnew(int num, int fin_ind);
+t_list		*ft_lstnew(int num);
 int			ft_lstsize(t_list *lst);
 
 #endif
