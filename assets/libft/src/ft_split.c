@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 16:55:53 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/09/06 12:32:15 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/09/11 13:16:46 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static void	split_words(const char *s, char c, char **arr)
 			j = 0;
 			while (s[i + j] && s[i + j] != c)
 				j++;
-			arr[k] = strndup(&s[i], j);
+			arr[k] = ft_strndup(&s[i], j);
 			k++;
 			i += j;
 		}
