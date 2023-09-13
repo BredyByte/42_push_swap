@@ -13,7 +13,11 @@ LIBFT_LIB_PATH = assets/libft/libft.a
 
 HEADERS	= -I $(LIBFT_PATH)/include/ -I ./include
 
-SRC =  $(SRC_PATH)/fn_actions.c $(SRC_PATH)/fn_algorithms.c $(SRC_PATH)/fn_errors.c $(SRC_PATH)/fn_utils.c $(SRC_PATH)/ft_arg_check.c $(SRC_PATH)/ft_create_stack.c $(SRC_PATH)/ft_fill_stats.c $(SRC_PATH)/ft_move_cheapest.c $(SRC_PATH)/init.c $(SRC_PATH)/push_swap.c
+SRC_FILES = fn_actions.c fn_algorithms.c fn_errors.c \
+			fn_utils.c ft_arg_check.c ft_create_stack.c \
+			ft_fill_stats.c ft_move_cheapest.c init.c push_swap.c
+
+SRC := $(addprefix $(SRC_PATH)/, $(SRC_FILES))
 OBJ = $(SRC:$(SRC_PATH)/%.c=$(OBJ_PATH)/%.o)
 
 ORANGE = \033[1;38;5;208m

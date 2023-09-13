@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 10:59:52 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/09/10 19:55:17 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/09/13 17:20:29 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "../assets/libft/include/libft.h"
-# include <fcntl.h>
-# include <limits.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
 
 // ft_create_stack.c
 t_list	**ft_create_stack(char **values, t_list **stack_a);

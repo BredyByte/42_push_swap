@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 18:03:44 by marvin            #+#    #+#             */
-/*   Updated: 2023/09/10 19:58:16 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/09/13 17:19:48 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	ft_check_num(char *arg)
 
 static int	ft_check_range(int num)
 {
-	if (num < INT_MIN || num > INT_MAX)
+	if (num == 1 || num == -1)
 		return (0);
 	return (1);
 }
