@@ -25,7 +25,9 @@ Run ./push_swap [input] example (./push_swap "1 0 12 -12 77 8" or ./push_swap 1 
 
 ## 👨‍🏫 Test with checker
 
+```Bash
 ARG="728 380 800 181 683 329 760 532 638 306 900 884 970 203 326 468 267 523 78 759 273 864 401 120 221 445 506 868 12 553"; ./push_swap $ARG | ./checker_Mac $ARG
+```
 
 The checker validates if the numbers are correctly sorted:
 To compile:
@@ -34,7 +36,9 @@ To compile:
 
 For visualizations, run:
 
+```Bash
 python3 pyviz.py `ruby -e "puts (1..20).to_a.shuffle.join(' ')"`
+```
 
 ## 📚 Resources
 
