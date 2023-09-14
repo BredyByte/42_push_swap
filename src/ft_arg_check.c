@@ -6,23 +6,36 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 18:03:44 by marvin            #+#    #+#             */
-/*   Updated: 2023/09/13 17:19:48 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/09/14 11:59:58 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_check_num(char *arg)
+static size_t	ft_check_range(char *str)
 {
-	if (!ft_isdigit(arg))
-		return (0);
-	return (1);
-}
+	size_t	len;
 
-static int	ft_check_range(int num)
-{
-	if (num == 1 || num == -1)
+	len = ft_strlen(str, 's');
+	if (len > 11)
 		return (0);
+	else if (len == 11 && str[0] != '-' && str[0] != '+')
+		return (1);
+	else if (len == 11 && str[0] == '-')
+	{
+		if (ft_strncmp("-2147483648", str, 12) < 0)
+			return (0);
+	}
+	else if (len == 11 && str[0] == '+')
+	{
+		if (ft_strncmp("+2147483647", str, 12) < 0)
+			return (0);
+	}
+	else if (len == 10 && str[0] != '-' && str[0] != '+')
+	{
+		if (ft_strncmp("2147483647", str, 10) < 0)
+			return (0);
+	}
 	return (1);
 }
 
@@ -51,17 +64,16 @@ static int	ft_check_duplicate(char **argv)
 	return (1);
 }
 
-void	ft_arg_check(int argc, char **argv)
+void	ft_arg_check(char **argv)
 {
 	char	**current;
 
 	current = argv;
-	(void)argc;
 	while (*current)
 	{
-		if (!ft_check_num(*current))
+		if (!ft_is_valid_number(*current))
 			ft_arg_error();
-		if (!ft_check_range(ft_atoi(*current)))
+		if (!ft_check_range(*current))
 			ft_arg_error();
 		if (!ft_check_duplicate(argv))
 			ft_arg_error();

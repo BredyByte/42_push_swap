@@ -6,13 +6,13 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:51:02 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/09/14 11:44:51 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/09/14 11:41:15 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(char *str)
+int	ft_is_valid_number(char *str)
 {
 	if (*str == '-' || *str == '+')
 		str++;

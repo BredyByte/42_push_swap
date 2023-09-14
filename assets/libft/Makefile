@@ -27,7 +27,8 @@ ft_itoalong.c ft_puthexa.c ft_strtrim.c \
 ft_lstadd_back.c ft_putnbr_fd.c ft_substr.c \
 ft_lstadd_front.c ft_putstr.c ft_tolower.c \
 ft_lstclear.c ft_putstr_fd.c ft_toupper.c \
-ft_lstdelone.c ft_putvoid.c get_next_line.c
+ft_lstdelone.c ft_putvoid.c get_next_line.c \
+ft_is_valid_number.c
 
 SRC := $(addprefix $(SRC_PATH)/, $(SRC_FILES))
 

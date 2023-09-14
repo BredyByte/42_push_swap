@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 10:59:52 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/09/13 17:20:29 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/09/14 11:51:18 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_arg_error(void);
 size_t	ft_memory_error(t_list **stack_a, t_list **stack_b);
 
 // ft_arg_check.c
-void	ft_arg_check(int argc, char **argv);
+void	ft_arg_check(char **argv);
 
 // fn_utils.c
 void	ft_free_all(t_list **stack_a, t_list **stack_b, char **values,

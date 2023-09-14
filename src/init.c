@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 18:10:08 by marvin            #+#    #+#             */
-/*   Updated: 2023/09/10 19:59:12 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/09/14 11:51:28 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ static char	**process_args(int argc, char **argv)
 	if (argc == 2)
 	{
 		args = ft_split(argv[1], ' ');
-		ft_arg_check(argc - 1, args);
+		ft_arg_check(args);
 		return (args);
 	}
 	else
 	{
-		ft_arg_check(argc - 1, argv + 1);
+		ft_arg_check(argv + 1);
 		return (argv + 1);
 	}
 }
