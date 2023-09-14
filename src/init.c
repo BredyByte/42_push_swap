@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 18:10:08 by marvin            #+#    #+#             */
-/*   Updated: 2023/09/14 11:51:28 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/09/14 13:03:21 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,20 @@ static void	init_resources(t_list ***stack_a, t_list ***stack_b)
 static char	**process_args(int argc, char **argv)
 {
 	char	**args;
+	int		new_argc;
 
 	if (argc == 2)
 	{
 		args = ft_split(argv[1], ' ');
-		ft_arg_check(args);
+		new_argc = 0;
+		while (args[new_argc])
+			new_argc++;
+		ft_arg_check(new_argc, args);
 		return (args);
 	}
 	else
 	{
-		ft_arg_check(argv + 1);
+		ft_arg_check(argc - 1, argv + 1);
 		return (argv + 1);
 	}
 }
