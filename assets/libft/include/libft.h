@@ -6,7 +6,7 @@
 /*   By: dbredykh <dbredykh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:12:49 by dbredykh          #+#    #+#             */
-/*   Updated: 2023/09/14 11:45:45 by dbredykh         ###   ########.fr       */
+/*   Updated: 2023/09/14 14:27:53 by dbredykh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int			ft_isalpha(int c);
 int			ft_isascii(int c);
 int			ft_is_valid_number(char *str);
 int			ft_isdigit(char *str);
+int			ft_isdigitchar(int c);
+size_t		ft_check_digit(int argc, char *argv[]);
 int			ft_isprint(int c);
 void		*ft_memcpy(void *dest, const void *src, size_t len);
 void		*ft_memmove(void *dest, const void *src, size_t len);

@@ -1,5 +1,7 @@
 # 🧮 Push_swap 🧮
 
+> This repository contains a "push_swap" project that is part of the École 42 curriculum.
+
 ## 👋 A brief intro
 
 Push Swap is a project to code a program that sorts a stack of integers using only specific operations and two stacks.
