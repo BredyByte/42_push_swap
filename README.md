@@ -1,6 +1,6 @@
 # 🧮 Push_swap 🧮
 
-> This repository contains a "push_swap" project that is part of the École 42 curriculum.
+> This repository contains "push_swap" project that is part of the École 42 curriculum.
 
 ## 👋 A brief intro
 
